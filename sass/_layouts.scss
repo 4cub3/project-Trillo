@@ -97,3 +97,37 @@ flex:1; //means flex-grow
         align-items: stretch;
      } 
 }
+
+
+///////////////////flights
+///
+.flights{
+   width: 100%;
+//    display: none;
+}
+
+.island{
+    display: flex;
+    background-size: cover;
+    border: 1rem solid $color-grey-light-1;
+    border-radius: 4rem;
+    // background-color: $color-white;
+
+    @media only screen and (max-width:$bp-small){
+        flex-direction: column;
+    }
+}
+
+
+
+//////////////////////
+/// booking
+
+.booking{
+    display: flex;
+    padding: 2rem;
+
+    @media only screen and (max-width:$bp-small){
+        flex-direction: column;
+    }
+}

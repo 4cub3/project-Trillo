@@ -179,8 +179,7 @@
                          width .4s cubic-bezier(1,0,0,1) .2s;
             
         }
-        &-item:hover::before,
-        &-item--active::before{
+        &-item:hover::before {
             transform: scaleY(1);
             width: 100%;
         }
@@ -188,7 +187,6 @@
         &-item:active::before{
             background-color: $color-primary-light;
         }
-        
 
         &-link:link,
         &-link:visited{
@@ -635,4 +633,477 @@
     }
 
         
+
+    ///////island
+    /// 
+    /// 
+  
+
+    .flight__search{
+        flex:0 0 45%;
+        opacity:1;
+        backdrop-filter: blur(10rem);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &::before{
+            position: absolute;
+            z-index: -10;
+            content: " ";
+            width: 100%;
+            height: 100%;
+            opacity: .6;
+            background-color: $color-white;
+        }
+    }
+
+    .island-search-bar{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+        
+        
+    }
+    .island-search{
+
+        &__input{
+            width: 90%;
+            margin-right: -2.8rem;
+            border: none;
+            background-color: transparent;
+            border-bottom: .2rem solid $color-grey-dark-2;
+
+            &:focus{
+                outline: none;
+                border-bottom: .2rem solid $color-primary;
+            }
+        }
+        &__button{
+            background-color: transparent;
+            border: none;
+        }
+
+        &__icon{
+            height:3.6rem;
+            width: 3.6rem;
+            fill: $color-grey-dark-2;
+            padding: .8rem;
+            background-color:none;
+        }
+    }
     
+    
+
+    .search-filter{
+        display: flex;
+        flex-direction: column;
+        margin: 3rem auto;
+        background-color:   rgba($color-white, .6) ;
+        padding: 2rem;
+        border-radius: 1rem;
+        height: 20rem;
+        width: 90%;
+        justify-content: space-between;
+        box-shadow: $box-shadow-light;
+        position: relative;
+
+        &-heading{
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+    }
+    .filter{
+        display: flex;
+        align-items: center;
+
+        &:nth-of-type(2)>input{
+            width: 30%;
+
+            &:not(:last-child){
+                margin-right: 2.5rem;
+            }
+        }
+        &-input{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            align-self: stretch;
+
+            &::-webkit-input-placeholder{
+                font-size: 1.6rem;
+            }
+        }
+
+        &-icon{
+            height: 3.4rem;
+                width: 3.4rem;
+                margin-right: 2rem;
+                fill: $color-primary ;
+                background-color: rgba($color-primary, .2);
+                border-radius: .5rem;
+                padding: .8rem;
+        }
+
+        &-search{
+            position: absolute;
+            height: 100%;
+            width: 6rem;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: $color-primary;
+            border-radius: 1rem;
+            box-shadow: -.4rem 0 3rem rgba($color-primary, .4);
+
+            &__icon{
+                width:2rem ;
+                height: 2rem;
+                fill: $color-white;
+
+            }
+        }
+    }
+
+   .flight__search-popular{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    // color: $color-grey-dark;
+    &-heading{
+        font-size: 2.2rem;
+      
+    }
+    & span{
+        font-size: 1.6rem;
+    }
+   }
+
+   .flight__places{
+
+    &-card{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        padding: 1rem;
+        border-radius: 1.6rem;
+        background-color:   rgba($color-white, .6) ;
+        box-shadow: $box-shadow-light;
+        margin-bottom: 2rem;
+       
+    }
+    &-image{
+        width: 10rem;
+        border-radius: inherit;
+        margin-right: 2rem;
+        
+    }
+
+    &-description{
+
+        & p{
+            font-size: 1.2rem;
+            &:last-child{
+                color: $color-grey-dark;
+            }
+        }
+        & h2{
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: $color-grey-dark;
+            font-weight: 800;
+        }
+        & span{
+            display: flex;
+            align-items: center;
+
+            & div{
+                margin-left: 1rem;
+            }
+        }
+    }
+   }
+
+    .island__images{
+        flex: 0 0 55%;
+        // background-image: url(../img/island-main.jpg);
+        background-size: cover;
+        // border-radius: 2rem;
+        min-height: 70rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        // border: 2rem solid $color-white;
+        background-image: linear-gradient(to right bottom,$color-primary-light, $color-primary-dark), url(../img/island-main.jpg);
+    background-blend-mode: multiply;
+
+    @media only screen and (max-width:$bp-small){
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+        &-hero{
+            color: $color-white;
+            margin-top: auto;
+            margin-bottom: 20rem;
+            & p{
+                font-size: 2.4rem;
+                
+            }
+        }
+        &-heading{
+            font-size: 6.4rem;
+            font-weight: 900;
+        }
+
+        &-plan{
+            background-color: transparent;
+            border: .2rem solid $color-white;
+            border-radius: 2rem;
+            padding: 2rem ;
+            color: $color-white;
+            margin-top: 2rem;
+        }
+        &-choose{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            // padding: 2rem;
+            font-size: 1.6rem;
+            color: $color-white;
+        }
+        &-gallery{
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+            background-color: $color-white;
+            align-self: stretch;
+            border-radius: 2rem;
+            padding: 1rem;
+            box-shadow: $box-shadow-light;
+        }
+        &-image{
+            width: 30%;
+            border-radius: 2rem;
+        }
+    }
+
+    .active{
+        display: block;
+        animation: fade-in .5s ease;
+    }
+
+    @keyframes fade-in{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: .5;
+        }
+        100%{
+            opacity : 1;
+        }
+    }
+    .inactive{
+        display: none;
+    }
+    
+
+    //////////////////
+    /// booking
+
+    .booking__flight{
+        flex: 0 0 47%;
+        
+
+    }
+    
+    .booking__flight-location{
+        font-size: 1.2rem;
+       color: $color-white;
+       padding: 2rem;
+       border-radius: 1.4rem;
+       position: relative;
+       background-image: linear-gradient(to bottom, $color-primary-light, $color-primary-dark);
+       
+
+       &::before{
+        content: '';
+        // width: 2rem;
+        // height: 2rem;
+        border-top: 1rem solid $color-primary-dark;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    }
+    .booking__flight-destination{
+        display: flex;
+        justify-content: space-between;
+        
+        
+        
+
+        &-abb{
+            display: flex;
+            justify-content: space-between;
+            font-size: 2.2rem;
+            align-items: center;
+            &-abb3{
+                margin: 0 auto;
+
+            }
+        }
+
+        &-cal{
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+
+    .booking__aircraft-details{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: $color-grey-dark;
+        border-radius: 0 0 1.4rem 1.4rem;
+        box-shadow: $box-shadow-light;
+        
+    }
+    .booking__aircraft-flight{
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+
+       
+       
+    }
+    .booking__aircraft-type{
+        font-weight: 900;
+    }
+
+
+    ///////////safety__precaution
+    ///
+    
+    .safety__precaution{
+        padding: 2rem;
+        margin-top: 4rem;
+        box-shadow: $box-shadow-light;
+        backdrop-filter: blur(2rem);
+        border-radius: 1.6rem;
+        opacity: .8;
+    }
+    .safety__precaution-details{
+        
+        &-heading{
+            color:$color-grey-dark;
+            margin-bottom: 0 !important;
+            font-size: 1.6rem;
+        }
+        &>*:not(:last-child){
+        margin-bottom: 2rem;
+        }
+        &-body{
+            font-size: 1.4rem;
+        }
+
+        &-opt{
+            display: flex;
+            align-items: center;
+            
+
+            & svg{
+                margin-right: 2rem;
+            }
+        }
+
+        &-options> p{
+            font-size: 1.4rem;
+
+        }
+    }
+
+    .booking__type{
+        flex: 0 0 50%;
+        margin-left: auto;
+
+        &-option{
+         display: flex;
+         align-items: center;
+        background-color: rgba ($color-white, .2);
+        border-radius: 1.6rem;
+        box-shadow: $box-shadow-light;
+        backdrop-filter: blur(10rem);
+        margin-bottom: 2rem;
+
+        }
+    }
+
+    .booking__type-economy{
+        padding: 2rem;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-heading{
+            font-size: 1.8rem;
+            color: $color-grey-dark;
+        }
+        &-list{
+            list-style: none;
+            display: flex;
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+          
+
+            & li {
+                flex: 0 0 50%;
+                display: flex;
+                align-items: center;
+
+                & span{
+                    margin-left: 1.4rem;
+                }
+            }
+        }
+        &-list2{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            
+            & li{
+                flex: 0 0 50%;
+                font-size: 1.2rem;
+                font-weight: 800;
+                color: $color-grey-dark;
+            }
+        }
+
+        &-price{
+        
+            display: flex;
+            padding-top: 1rem;
+            border-top: 1px solid $color-grey-dark-3;
+            align-items: center;
+            // margin-top: auto;
+            & p{
+                font-size: 1.6rem;
+                margin-right: 2rem;
+                font-weight: 800;
+            }
+        }
+    }
+.booking__type-option-premium{
+    flex: 0 0 30%;
+
+    &-seat{
+        width: 100%;
+    }
+}
